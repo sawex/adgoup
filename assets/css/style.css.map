@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.less","main.css"],"names":[],"mappings":"AAAA,EACE,qBCCF","file":"style.css","sourcesContent":["* {\r\n  cursor: none !important;\r\n}","* {\n  cursor: none !important;\n}\n"]}
