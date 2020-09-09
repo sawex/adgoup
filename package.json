@@ -49,6 +49,7 @@
   "dependencies": {
     "focus-visible": "^5.1.0",
     "micromodal": "^0.4.6",
+    "normalize.css": "^8.0.1",
     "rellax": "^1.12.1",
     "store": "^2.0.12",
     "validate.js": "^0.13.1"
