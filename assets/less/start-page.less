@@ -1,13 +1,32 @@
 .start-page {
-  background-image: url(../img/text-cloud.png);
+  //background-image: url(../img/text-cloud.png);
   min-height: 100vh;
-  background-position: 64px bottom;
+  //background-position: 64px bottom;
+  //background-repeat: no-repeat;
+  position: relative;
+}
+
+.start-page::after {
+  content: '';
+  position: absolute;
+  top: -220px;
+  bottom: 0;
+  left: 64px;
+  right: -55%;
+  width: 2330px;
+  background-image: url(../img/why-us-cloud.png);
+  //background-position: 64px bottom;
   background-repeat: no-repeat;
+  z-index: -1;
+  background-size: cover;
 }
 
 .start-page__header {
   padding-left: 64px;
   padding-top: 42px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .logo {
@@ -25,14 +44,18 @@
 
 .start-page__desc-box {
   display: flex;
+  align-items: center;
+  width: 45%;
+  margin-left: auto;
+  height: 100%;
 }
 
 .start-page__desc-wrap {
   max-width: 488px;
   text-align: center;
-  margin-top: 73px;
-  margin-right: 108px;
-  margin-left: auto;
+  //margin-top: 73px;
+  //margin-right: 108px;
+  //margin-left: auto;
 }
 
 .start-page__slogan {

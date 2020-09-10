@@ -10,7 +10,7 @@
 </head>
 <body>
   <main class="main" id="main">
-    <section class="start-page">
+    <section class="start-page rellax" data-rellax-speed="2">
       <header class="start-page__header">
         <a href="" class="start-page__header-logo logo">
           <img src="assets/img/logo.png"
@@ -19,7 +19,7 @@
         </a>
       </header>
 
-      <div class="start-page__desc-box">
+      <div class="start-page__desc-box rellax" data-rellax-speed="10">
         <div class="start-page__desc-wrap">
           <p class="main-text start-page__slogan">Интернет переполнен скучными баннерами</p>
           <h1 class="start-page__title primary-title">Оживите вашу рекламу</h1>
@@ -35,7 +35,7 @@
     </section>
 
     <section class="why-us">
-      <div class="why-us__desc-box">
+      <div class="why-us__desc-box rellax" data-rellax-speed="10">
         <h1 class="why-us__title secondary-title">Почему adGoUp?</h1>
         <p class="main-text">
           Потому что вовлеченные пользователи в процесе
@@ -51,7 +51,9 @@
         </a>
       </div>
       <div class="why-us__cards-wrapper">
-        <ul class="why-us__cards-list">
+        <ul class="why-us__cards-list rellax" data-rellax-speed="5" data-rellax-zindex="10" style="position: absolute;
+left: 72%;
+bottom: 36%;">
           <li class="why-us__card">
             <a href="#" class="why-us__card-link">
               <img src="assets/img/card.png" alt="как это работает?" class="why-us__card-img">
@@ -86,7 +88,25 @@
       </div>
     </section>
 
-    <section class="ads-section"></section>
+    <section class="ads">
+      <div class="ads__quote-wrapper quote-wrapper rellax">
+        <blockquote>
+          <p class="main-text quote-text">
+            Вести бизнес без рекламы — все равно, что подмигивать девушке в полной темноте.
+          </p>
+          <p class="main-text quote-author">
+            Стюарт Хендерсон Бритт
+          </p>
+        </blockquote>
+      </div>
+      <div class="ads__disclaimer disclaimer rellax">
+        <p>
+          * Данные рекламные компании созданы для ознакомления с возможностями adGoUp и
+          не все являются актуальными рекламными компаниями.
+        </p>
+      </div>
+    </section>
+
     <section class="callback">
       <div class="callback__form-wrapper">
         <h1 class="primary-title callback__title">Оставить <br> заявку</h1>
@@ -113,9 +133,9 @@
         </form>
       </div>
 
-      <div class="callback__desc-box">
+      <div class="callback__desc-box quote-wrapper">
         <blockquote>
-          <p class="main-text callback__text callback__quote-text">
+          <p class="main-text callback__text quote-text">
             “Если ваша реклама неотличима от остальных, это равносильно самоубийству”
           </p>
           <p class="main-text quote-author">Уильям Бернбах</p>
@@ -131,5 +151,23 @@
 
 
   <script src="assets/js/main.min.js"></script>
+
+  <script src="rellax.min.js"></script>
+  <script>
+    // Accepts any class name
+    var rellax = new Rellax('.rellax');
+  </script>
+
+  <script>
+    // Also can pass in optional settings block
+    var rellax = new Rellax('.rellax', {
+      speed: -2,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: false,
+      horizontal: true
+    });
+  </script>
 </body>
 </html>
