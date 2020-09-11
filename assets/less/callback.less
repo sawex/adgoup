@@ -1,12 +1,25 @@
 .callback {
-  background-image: url(../img/callback.png);
+  //background-image: url(../img/callback.png);
   min-height: 100vh;
-  background-position: -375px -170px;
-  background-repeat: no-repeat;
+  //background-position: -375px -170px;
+  //background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+}
+
+.callback::after {
+  content: '';
+  background-image: url(../img/callback.png);
+  position: absolute;
+  top: -220px;
+  bottom: 0;
+  left: -440px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-size: cover;
 }
 
 .callback__fields-wrapper {

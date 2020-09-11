@@ -8,6 +8,8 @@ import { qs, qsAll } from './dom-helpers';
 
 class Main {
   constructor() {
+    this.sections = qsAll('section');
+    this.main = qs('#main');
     this._run();
   }
 
@@ -16,6 +18,9 @@ class Main {
 
     this._registerGlobalObjects();
     this._initParalaxCard();
+    this._calculateSectionsWidths();
+    this._initEventListeners();
+    this._scrollHorizontally();
   }
 
   _registerGlobalObjects() {
@@ -33,6 +38,29 @@ class Main {
       vertical: false,
       horizontal: true,
     });
+  }
+
+  _calculateSectionsWidths() {
+    if (!this.sections.length) {
+      return;
+    }
+
+    this.main.style.width = `${this.sections.length * 100}vw`;
+  }
+
+  _initEventListeners() {
+    window.addEventListener('mousewheel', (e) => this._scrollHorizontally(e), false);
+    window.addEventListener('DOMMouseScroll', (e) => this._scrollHorizontally(e), false);
+  }
+
+  _scrollHorizontally(e) {
+    const delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+    const SCROLL_SPEED = 100;
+
+    document.documentElement.scrollLeft -= (delta * SCROLL_SPEED);
+    document.body.scrollLeft -= (delta * SCROLL_SPEED);
+
+    e.preventDefault();
   }
 }
 
