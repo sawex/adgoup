@@ -1,4 +1,3 @@
-import kennitala from 'kennitala';
 import validate from 'validate.js';
 import { qs, qsAll } from '../dom-helpers';
 
@@ -25,14 +24,6 @@ class FormValidator {
    * @private
    */
   _addCustomValidators() {
-    validate.validators._ssn = (value, options) => {
-      if (!value || kennitala.isValid(value)) {
-        return null;
-      }
-
-      return options.message ? options.message : 'Invalid SSN';
-    };
-
     validate.validators._time = (value) => {
       const regex = new RegExp(/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/);
 

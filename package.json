@@ -48,10 +48,12 @@
   },
   "dependencies": {
     "focus-visible": "^5.1.0",
+    "fullpage.js": "^3.0.9",
     "micromodal": "^0.4.6",
     "normalize.css": "^8.0.1",
     "rellax": "^1.12.1",
     "store": "^2.0.12",
+    "sweetalert": "^2.1.2",
     "validate.js": "^0.13.1"
   }
 }

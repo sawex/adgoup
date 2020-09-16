@@ -86,13 +86,41 @@ body {
 }
 
 main {
-  display: flex;
+  //display: flex;
   //width: 400vw;
+}
+
+.fp-slidesContainer {
+  transition: all 1500ms ease 0s !important;
 }
 
 section {
   width: 100vw;
   max-height: 100vh;
+}
+
+section .start-page__desc-box {
+  transform: translateX(-500px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+section.active .start-page__desc-box {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+section .why-us__desc-wrap {
+  transform: translateX(800px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+section.active .why-us__desc-wrap {
+  transform: translateX(50px);
+  opacity: 1;
+  transition: all 1s ease-in-out;
 }
 
 @import "fonts";

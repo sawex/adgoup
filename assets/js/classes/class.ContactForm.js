@@ -1,16 +1,12 @@
-import { __ } from '@wordpress/i18n';
-import AJAX from './class.AJAX';
-import Abstract from './class.Abstract';
+import swal from 'sweetalert';
 import FormValidator from './class.FormValidator';
 import { qs } from '../dom-helpers';
 
 class ContactForm {
   constructor() {
-    if (!qs('.contacts__form')) return;
+    if (!qs('.callback__form')) return;
 
-    this.form = qs('.contacts__form');
-    this.formSuccessMessage = qs('.send-message');
-    this.formStatus = qs('.alert', this.form);
+    this.form = qs('.callback__form');
     this.submitButton = qs('button[type="submit"]');
 
     this._run();
@@ -25,33 +21,52 @@ class ContactForm {
   }
 
   _handleSubmit() {
-    const _this = this;
+    // const _this = this;
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       if (!this._isFormValid()) return;
 
-      const data = new FormData(this.form);
+      // const data = new FormData(this.form);
+      // AJAX.post({
+      //   data: Abstract.formDataToObject(data),
+      //   url: './mail.php',
+      //   beforeSend() {
+      //     _this.submitButton.disabled = true;
+      //   },
+      //   complete() {
+      //     _this.submitButton.disabled = false;
+      //
+      //     return swal({
+      //       title: 'Good job!',
+      //       text: 'You\'ve succesfully submitted the form!',
+      //       icon: 'success',
+      //     });
+      //   },
+      //   success(response) {
+      //     const level = response.success ? 'success' : 'error';
+      //
+      //     if (level === 'success') {
+      //       return swal({
+      //         title: 'Good job!',
+      //         text: 'You\'ve succesfully submitted the form!',
+      //         icon: 'success',
+      //       });
+      //     }
+      //
+      //     return swal({
+      //       title: 'Error!',
+      //       text: 'Internal Server error',
+      //       icon: 'error',
+      //     });
+      //   },
+      // });
 
-      AJAX.post({
-        action: 'mst_somi_contact_form',
-        data: Abstract.formDataToObject(data),
-        beforeSend() {
-          _this.submitButton.disabled = true;
-        },
-        complete() {
-          _this.submitButton.disabled = false;
-        },
-        success(response) {
-          const level = response.success ? 'success' : 'error';
-
-          if (level === 'success') {
-            return _this._showSuccessMessage();
-          }
-
-          _this._writeStatus(level, response.data.message);
-        },
+      return swal({
+        title: 'Good job!',
+        text: 'You\'ve succesfully submitted the form!',
+        icon: 'success',
       });
     });
   }
@@ -60,52 +75,31 @@ class ContactForm {
     return new FormValidator().isValid(this.form, {
       name: {
         presence: {
-          message: __('^Name field can\'t be empty', 'mst_somi_js'),
+          message: '^Укажите ваше имя',
         },
       },
       email: {
         presence: {
-          message: __('^Email field can\'t be empty', 'mst_somi_js'),
+          message: '^Укажите ваш email',
         },
         email: {
-          message: __('^Incorrect email format', 'mst_somi_js'),
+          message: '^Убедитесь, что email указан в формате user@example.com',
         },
       },
-      phone: {
+      website: {
         presence: {
-          message: __('^Phone field can\'t be empty', 'mst_somi_js'),
+          message: '^Укажите ссылку на ваш сайт',
         },
-        format: {
-          pattern: new RegExp(/^[0-9]{1,12}$/),
-          message: __('^Phone number must contain only digits', 'mst_somi_js'),
+        url: {
+          message: '^Убедитесь, что сайт указан в формате https://example.com',
         },
       },
-      comment: {
+      message: {
         presence: {
-          message: __('^Comment field can\'t be empty', 'mst_somi_js'),
+          message: '^Укажите ваш вопрос',
         },
       },
     });
-  }
-
-  _writeStatus(level, status) {
-    Abstract.fadeIn(this.formStatus);
-
-    this.formStatus.classList.add(level);
-    this.formStatus.innerText = status;
-
-    setTimeout(() => {
-      Abstract.fadeOut(this.formStatus);
-
-      this.formStatus.classList.remove(level);
-      this.formStatus.innerText = '';
-    }, 8000);
-  }
-
-  _showSuccessMessage() {
-    Abstract.fadeOut(this.form);
-    Abstract.fadeIn(this.formSuccessMessage);
-    this.form.remove();
   }
 }
 
