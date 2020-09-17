@@ -123,6 +123,20 @@ section.active .why-us__desc-wrap {
   transition: all 1s ease-in-out;
 }
 
+section .quote-wrapper,
+section .ads__disclaimer {
+  transform: translateX(800px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+section.active .quote-wrapper,
+section.active .ads__disclaimer {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
 @import "fonts";
 @import "start-page";
 @import "why-us";

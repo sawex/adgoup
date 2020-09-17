@@ -66,6 +66,7 @@ class Main {
       loopHorizontal: false,
       controlArrows: false,
       anchors: ['section1', 'section2', 'section3', 'section4'],
+      normalScrollElements: '.why-us__cards-list',
       licenseKey: 'DB55ED36-24984ABE-A41951BD-7E95785D',
       scrollHorizontally: true,
       scrollHorizontallyKey: '0F51D536-0F9C4FFC-9EF22BD4-92F4E21',

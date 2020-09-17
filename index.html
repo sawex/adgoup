@@ -101,6 +101,56 @@
                 <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
               </a>
             </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
+            <li class="why-us__card">
+              <a href="https://www.deepl.com/translator" class="why-us__card-link">
+                <img src="assets/img/ads-card-1.png" alt="как это работает?" class="why-us__card-img">
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -164,8 +214,8 @@
         </blockquote>
       </div>
       <footer class="callback__footer">
-        <a href="#" class="footer-logo">
-          <img src="assets/img/footer-logo.png" alt="" class="footer-logo__img">
+        <a href="#" class="footer-logo logo">
+          <img src="assets/img/logo.png" alt="" class="footer-logo__img logo__img">
         </a>
       </footer>
     </section>
@@ -174,5 +224,41 @@
 
 <script src="assets/js/main.min.js"></script>
 <script src="jquery-3.5.1.min.js"></script>
+
+<script>
+  function addOnWheel(elem, handler) {
+    if (elem.addEventListener) {
+      if ('onwheel' in document) {
+        // IE9+, FF17+
+        elem.addEventListener("wheel", handler);
+      } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        elem.addEventListener("mousewheel", handler);
+      } else {
+        // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
+        elem.addEventListener("MozMousePixelScroll", handler);
+      }
+    } else { // IE8-
+      list.attachEvent("onmousewheel", handler);
+    }
+  }
+
+  var translate = 0;
+  var list = document.querySelector('.why-us__cards-list');
+
+  addOnWheel(list, function(e) {
+
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+
+    // отмасштабируем при помощи CSS
+    if (delta > 0) translate -= 30;
+    else translate += 30;
+
+    list.style.transform = list.style.WebkitTransform = list.style.MsTransform = 'translateX(' + translate + 'px' + ')';
+
+    // отменим прокрутку
+    e.preventDefault();
+  });
+</script>
 </body>
 </html>
