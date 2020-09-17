@@ -4,6 +4,8 @@
   //background-position: -645px bottom;
   //background-repeat: no-repeat;
   position: relative;
+  z-index: -1;
+  //z-index: 1;
 }
 
 //.why-us::after {
@@ -43,8 +45,13 @@
 
 .why-us__cards-wrapper {
   z-index: 9;
-  max-width: 50%;
-  padding-left: 350px;
+  //max-width: 50%;
+  //padding-left: 350px;
+  transform: translateY(50%);
+  margin-left: -35vw;
+  overflow: hidden;
+  min-height: 305px;
+  position: relative;
 }
 
 .why-us__cards-list {
@@ -53,9 +60,9 @@
   padding: 0;
   display: flex;
   transition: all 0.1s ease-in-out 0s;
-  width: calc(100vw + 505px);
-  overflow: hidden;
-  min-height: 275px;
+  //width: calc(100vw + 505px);
+  //overflow: hidden;
+  //min-height: 275px;
 }
 
 .why-us__card {
