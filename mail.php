@@ -9,6 +9,7 @@ class FormHandler {
   ];
 
   const ADMIN_EMAIL = 'danil27zp@gmail.com';
+  const SERVER_EMAIL = 'form@webzp.com.ua';
 
   public static function fields_not_empty() {
     $result = true;
@@ -71,6 +72,7 @@ class FormHandler {
           'message' => $_POST['message'],
         ]),
         [
+          sprintf('From: %s', self::SERVER_EMAIL),
           'MIME-Version: 1.0',
           'Content-type: text/html; charset=iso-8859-1',
           sprintf('X-Mailer: PHP/%s', phpversion()),

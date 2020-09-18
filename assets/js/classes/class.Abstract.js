@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class Abstract {
   constructor() {
     if (this.constructor === Abstract) {
@@ -20,11 +22,11 @@ class Abstract {
   }
 
   static fadeIn(node) {
-    return jQuery(node).fadeIn();
+    return $(node).fadeIn();
   }
 
   static fadeOut(node) {
-    return jQuery(node).fadeOut();
+    return $(node).fadeOut();
   }
 
   static formDataToObject(formData) {

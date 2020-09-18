@@ -49,6 +49,7 @@
   "dependencies": {
     "focus-visible": "^5.1.0",
     "fullpage.js": "^3.0.9",
+    "jquery": "^3.5.1",
     "micromodal": "^0.4.6",
     "normalize.css": "^8.0.1",
     "rellax": "^1.12.1",

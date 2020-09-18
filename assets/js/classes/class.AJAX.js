@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class AJAX {
   constructor() {
     if (this.constructor === AJAX) {
@@ -6,7 +8,7 @@ class AJAX {
   }
 
   static post(options) {
-    jQuery.ajax({
+    $.ajax({
       type: 'POST',
       url: options.url,
       data: {

@@ -1,4 +1,6 @@
 import swal from 'sweetalert';
+import AJAX from './class.AJAX';
+import Abstract from './class.Abstract';
 import FormValidator from './class.FormValidator';
 import { qs } from '../dom-helpers';
 
@@ -21,52 +23,38 @@ class ContactForm {
   }
 
   _handleSubmit() {
-    // const _this = this;
+    const _this = this;
 
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       if (!this._isFormValid()) return;
 
-      // const data = new FormData(this.form);
-      // AJAX.post({
-      //   data: Abstract.formDataToObject(data),
-      //   url: './mail.php',
-      //   beforeSend() {
-      //     _this.submitButton.disabled = true;
-      //   },
-      //   complete() {
-      //     _this.submitButton.disabled = false;
-      //
-      //     return swal({
-      //       title: 'Good job!',
-      //       text: 'You\'ve succesfully submitted the form!',
-      //       icon: 'success',
-      //     });
-      //   },
-      //   success(response) {
-      //     const level = response.success ? 'success' : 'error';
-      //
-      //     if (level === 'success') {
-      //       return swal({
-      //         title: 'Good job!',
-      //         text: 'You\'ve succesfully submitted the form!',
-      //         icon: 'success',
-      //       });
-      //     }
-      //
-      //     return swal({
-      //       title: 'Error!',
-      //       text: 'Internal Server error',
-      //       icon: 'error',
-      //     });
-      //   },
-      // });
+      const data = new FormData(this.form);
+      AJAX.post({
+        data: Abstract.formDataToObject(data),
+        url: './mail.php',
+        beforeSend() {
+          _this.submitButton.disabled = true;
+        },
+        complete() {
+          _this.submitButton.disabled = false;
+        },
+        success(response) {
+          if (response.success) {
+            return swal({
+              title: 'Отлично!',
+              text: 'Ваши данные успешно отправлены',
+              icon: 'success',
+            });
+          }
 
-      return swal({
-        title: 'Good job!',
-        text: 'You\'ve succesfully submitted the form!',
-        icon: 'success',
+          return swal({
+            title: 'Ошибка!',
+            text: 'Данные не были отправлены',
+            icon: 'error',
+          });
+        },
       });
     });
   }
