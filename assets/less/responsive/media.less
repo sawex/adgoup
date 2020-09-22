@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (min-width: 1439px) {
+@media screen and (min-width: 1430px) {
   .why-us__cards-wrapper {
     margin-left: -46vw;
   }
@@ -40,10 +40,57 @@
   }
 }
 
-@media screen and (min-width: 1919px) {
+@media screen and (min-width: 1800px) {
+  .start-page__desc-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cloud-bg {
+    width: 160vw;
+    top: -400px;
+  }
+
   .why-us__cards-wrapper {
-    margin-left: -57vw;
+    margin-left: -56vw;
     padding-left: 400px;
+  }
+
+  .ads.active .why-us__cards-list {
+    transform: translateX(125px);
+  }
+
+  .why-us__card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .why-us__card:first-child {
+    width: 43vw;
+  }
+
+  .why-us__card {
+    width: 30vw;
+    height: auto;
+  }
+
+  .why-us__card-img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .ads__quote-wrapper {
+    width: 100%;
+    max-width: unset;
+  }
+
+  .ads__quote-wrapper blockquote {
+    max-width: 660px;
+  }
+}
+
+@media screen and (min-width: 1800px) and (max-width: 1870px) {
+  .ads.active .why-us__cards-list {
+    transform: translateX(100px);
   }
 }
 
@@ -64,7 +111,7 @@
   }
 
   .why-us__cards-wrapper {
-    margin-left: -36vw;
+    margin-left: -52vw;
     padding-left: 150px;
   }
 }
@@ -72,6 +119,38 @@
 @media screen and (min-width: 1279px) and (max-width: 1365px) and (min-height: 1000px) {
   .callback::after {
     width: 110vw;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .cloud-bg {
+    width: 2180px;
+  }
+
+  section.active .why-us__desc-wrap {
+    transform: translateX(60px);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .cloud-bg {
+    width: 1980px;
+  }
+
+  .why-us__cards-wrapper {
+    margin-left: -55vw;
+  }
+
+  section.active .why-us__desc-wrap {
+    transform: translateX(20px);
+  }
+
+  .why-us__card {
+    width: 285px;
+  }
+
+  .callback__form-wrapper {
+    padding-left: 50px;
   }
 }
 
@@ -149,6 +228,7 @@
 
   .why-us__card {
     margin-bottom: 30px;
+    width: 300px;
   }
 
   .why-us__cards-list li.why-us__card:last-child {
