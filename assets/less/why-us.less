@@ -29,14 +29,16 @@
   transform: translateY(50%);
   margin-left: -35vw;
   overflow: hidden;
-  min-height: 305px;
+  min-height: 500px;
   position: relative;
+  margin-top: -170px;
 }
 
 .why-us__cards-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
   display: flex;
   transition: 0.3s ease-in-out;
   transform: translateX(0);
@@ -50,10 +52,63 @@
 .why-us__card {
   width: 300px;
   height: 250px;
+  position: relative;
 }
 
 .why-us__card:first-child {
   width: 450px;
+}
+
+.why-us__card:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  background-image: url(../img/card-effect-2.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50px;
+  top: -55px;
+  left: 30px;
+  background-position: center top;
+}
+.why-us__card:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  background-image: url(../img/card-effect-3.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  background-position: center top;
+}
+.why-us__card:nth-child(4)::after {
+  content: '';
+  position: absolute;
+  background-image: url(../img/card-effect-4.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  background-position: center top;
+}
+
+.why-us__card:first-child::after {
+  content: '';
+  position: absolute;
+  width: 515px;
+  height: 431px;
+  background-image: url(../img/card-effect-1.png);
+  background-repeat: no-repeat;
+  left: -20px;
+  top: -40px;
+  opacity: 1;
+  transition: ease-in-out .5s;
+}
+
+.ads.active .why-us__card:first-child::after {
+  opacity: 0;
+  transition: ease-in-out .5s;
 }
 
 .why-us__card:not(:last-child) {

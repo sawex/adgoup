@@ -53,7 +53,9 @@
 
   .why-us__cards-wrapper {
     margin-left: -56vw;
+    margin-top: -200px;
     padding-left: 400px;
+    min-height: 550px;
   }
 
   .ads.active .why-us__cards-list {
@@ -66,6 +68,14 @@
 
   .why-us__card:first-child {
     width: 43vw;
+  }
+
+  .why-us__card:first-child::after {
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    left: -10px;
+    bottom: -88px;
   }
 
   .why-us__card {
@@ -201,6 +211,13 @@
   .why-us .why-us__desc-wrap {
     transform: none;
     opacity: 1;
+  }
+
+  .why-us__card:nth-child(2)::after,
+  .why-us__card:nth-child(3)::after,
+  .why-us__card:nth-child(4)::after,
+  .why-us__card:first-child::after {
+    content: none;
   }
 
   .ads {
