@@ -38,7 +38,13 @@
   margin: 0;
   padding: 0;
   display: flex;
-  transition: all 0.1s ease-in-out 0s;
+  transition: 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.ads.active .why-us__cards-list {
+  transform: translateX(85px);
+  transition: 0.3s ease-in-out;
 }
 
 .why-us__card {

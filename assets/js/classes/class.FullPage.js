@@ -15,7 +15,7 @@ class FullPage {
 
   _run() {
     this._initFullPage();
-    this._initScrollingEventListener();
+    // this._initScrollingEventListener();
   }
 
   _initFullPage() {
